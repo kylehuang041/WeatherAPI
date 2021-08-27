@@ -1,2 +1,2 @@
-# WeatherAPI
-Search for a location to get weather information.
+# Weather-API
+Uses HTML/CSS and JavaScript

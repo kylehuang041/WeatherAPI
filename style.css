@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&family=Ubuntu&display=swap');
+
+/* Color Variables */
+:root {
+    --title: rgb(20, 89, 136);
+    --input: rgb(15, 80, 110);
+    --key: rgb(35, 121, 128);
+    --value: var(--title);
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--key);
+    letter-spacing: 1.5px;
+    line-height: 30px;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+}
+
+/* Title */
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    color: var(--title);
+}
+
+/* Weather Information Container */
+.container {
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.4rem;
+    margin: 12.5% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.35);
+    width: 300px;
+    border-radius: 20px;
+    padding: 20px 30px;
+    color: var(--value);
+}
+/*rgba(133, 133, 133, 0.35)*/
+
+/* Weather Information: keys/variables */
+.key {
+    color: var(--key);
+}
+
+/* Input Search (Focus Highlight) */
+.search, select:focus, input:focus, textarea:focus, button:focus {
+    border: none;
+    outline: none;
+}
+
+/* Search Icon in Input Search */
+.fas {
+    border: none;
+    left: 0;
+    margin: 0 10px 0 10px;
+    color: var(--input) !important;
+    font-size: 1.1rem;
+    align-self: center;
+}
+
+/* Input Wrapper (Hover Effect) */
+.input:hover {
+    border-radius: 20px;
+    background: linear-gradient(to right, rgba(138, 181, 201, 0.7), rgba(155, 170, 187, 0.7));
+}
+
+/* Input Wrapper */
+div.input {
+    border: 1px solid var(--key);
+    border-radius: 50px;
+    height: 30px;
+    width: 100%;
+    padding: 2px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Input Search */
+input[type="text"] {
+    border: none;
+    width: 75%;
+    background: none;
+    font-size: 1rem;
+    font-size: 1.15rem;
+    color: var(--input);
+}
