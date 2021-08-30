@@ -21,6 +21,7 @@ window.addEventListener('load', () => {
             + pos.coords.longitude)
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data);
                     checkWeather(data);
                 })
                 .catch(error => console.log("Getting Location Error"))
@@ -70,7 +71,7 @@ function checkWeather(data) {
     // input the data from API to HTML
     result.innerHTML =
     `
-        <p class="city"><b class="key">City:</b> ${data.name}</p>
+        <p class="city"><b class="key">Location:</b> ${data.name}, ${data.sys.country}</p>
         <p class="temp"><b class="key">Temperature:</b> ${data.main.temp}  &#176 F</p>
         <p class="desc"><b class="key">Description:</b> ${desc}</p>
         <p class="date"><b class="key">Date:</b> ${new Date()}</p> 
@@ -105,6 +106,7 @@ function fetchAPI(city) {
     fetch(URL + "q=" + city)
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         checkWeather(data);
     })
     .catch(error => alert("Invalid City"))
