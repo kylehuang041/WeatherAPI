@@ -4,14 +4,15 @@ const key = 'cb48d909cf74b142fdd832755fa133c7'; // API Key
 let URL = `https://api.openweathermap.org/data/2.5/weather?appid=${key}`
         + `&units=imperial&`;
 
+let nav = false;
+
 // When the window loads, ask for location service to gain the user's
 // address to give their location's weather information.
 window.addEventListener('load', () => {
-    console.log("window loaded");
 
     // If user enables location service, then
     if (navigator.geolocation) {
-        console.log("Execute navigator geolocation");
+        console.log("load: navigator geolocation");
         // get user's location: longitude and latitude
         navigator.geolocation.getCurrentPosition((pos) => {
             // fetch data and output the location weather information
@@ -22,15 +23,22 @@ window.addEventListener('load', () => {
                 .then(data => {
                     checkWeather(data);
                 })
-                .catch(error => console.log("Rejected Location Service"))
+                .catch(error => console.log("Getting Location Error"))
         })
+        nav = true;
+    }
+
+    if (localStorage.getItem("cityName") !== null) {
+        console.log("load: local storage");
+        let city = localStorage.getItem("cityName");
+        fetchAPI(city);
     }
 
     // Otherwise, if location services are disabled, default to Seattle
     // weather information
-    else {
-        console.log("Set city to default: Seattle");
-        let city = saveHistory(); 
+    else if (localStorage.getItem("cityName") === null) {
+        console.log("load: Seattle");
+        let city = "Seattle"; 
         fetchAPI(city);
     }
 })
@@ -61,16 +69,29 @@ function checkWeather(data) {
 
     // input the data from API to HTML
     result.innerHTML =
-        `
+    `
         <p class="city"><b class="key">City:</b> ${data.name}</p>
         <p class="temp"><b class="key">Temperature:</b> ${data.main.temp}  &#176 F</p>
         <p class="desc"><b class="key">Description:</b> ${desc}</p>
         <p class="date"><b class="key">Date:</b> ${new Date()}</p> 
-        
     `
-    let inputField = document.querySelector('input');
-    localStorage.setItem("cityName", inputField.value); // save city name
+
+    const inputField = document.querySelector('input');
+
+    // If navigation is enabled
+    if (nav == true) {
+        // set local storage of your destination
+        localStorage.setItem("cityName", data.name);
+    }
+
+    // If that's not the case and input search isn't empty
+    else if (inputField.value !== null) {
+        // set local storage to input search value
+        localStorage.setItem("cityName", inputField.value);
+    }
+
     inputField.value = ""; // clear input search text after search
+    console.log("local storage: " + localStorage.getItem("cityName"));
 }
 
 /**
@@ -87,16 +108,6 @@ function fetchAPI(city) {
         checkWeather(data);
     })
     .catch(error => alert("Invalid City"))
-}
-
-/**
- * saveHistory: gets local storage city name if it isn't empty.
- * @returns {string}: if local storage has a city name, return that. If not
- * default to "Seattle"
- */
-function saveHistory() {
-    return localStorage.getItem("cityName").length > 0 ? localStorage.getItem("cityName")
-    : "Seattle";
 }
 
 /*
