@@ -29,6 +29,7 @@ window.addEventListener('load', () => {
         nav = true;
     }
 
+    //If local storage isn't empty, then use its data to search
     if (localStorage.getItem("cityName") !== null) {
         console.log("load: local storage");
         let city = localStorage.getItem("cityName");
