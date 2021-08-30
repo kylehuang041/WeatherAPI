@@ -7,11 +7,13 @@ let URL = `https://api.openweathermap.org/data/2.5/weather?appid=${key}`
 // When the window loads, ask for location service to gain the user's
 // address to give their location's weather information.
 window.addEventListener('load', () => {
+    console.log("window loaded");
 
     // If user enables location service, then
     if (navigator.geolocation) {
+        console.log("Execute navigator geolocation");
         // get user's location: longitude and latitude
-        navigator.geolocation.getCurrentPosition(pos => {
+        navigator.geolocation.getCurrentPosition((pos) => {
             // fetch data and output the location weather information
             // with the use of the location
             fetch(URL + "lat=" + pos.coords.latitude + "&lon="
@@ -23,15 +25,18 @@ window.addEventListener('load', () => {
                 .catch(error => console.log("Rejected Location Service"))
         })
     }
+
     // Otherwise, if location services are disabled, default to Seattle
     // weather information
     else {
-        let city = "Seattle"; 
+        console.log("Set city to default: Seattle");
+        let city = saveHistory(); 
         fetchAPI(city);
     }
 })
 
 // Collects user input for which city to use for weather search info
+// when 'Enter' key is pressed
 let enter = document.querySelector('.submit');
 enter.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -64,6 +69,7 @@ function checkWeather(data) {
         
     `
     let inputField = document.querySelector('input');
+    localStorage.setItem("cityName", inputField.value); // save city name
     inputField.value = ""; // clear input search text after search
 }
 
@@ -81,6 +87,16 @@ function fetchAPI(city) {
         checkWeather(data);
     })
     .catch(error => alert("Invalid City"))
+}
+
+/**
+ * saveHistory: gets local storage city name if it isn't empty.
+ * @returns {string}: if local storage has a city name, return that. If not
+ * default to "Seattle"
+ */
+function saveHistory() {
+    return localStorage.getItem("cityName").length > 0 ? localStorage.getItem("cityName")
+    : "Seattle";
 }
 
 /*
