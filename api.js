@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
             + pos.coords.longitude)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     checkWeather(data);
                 })
                 .catch(error => console.log("Getting Location Error"))
