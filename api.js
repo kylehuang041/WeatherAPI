@@ -107,7 +107,7 @@ function fetchAPI(city) {
     fetch(URL + "q=" + city)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         checkWeather(data);
     })
     .catch(error => alert("Invalid City"))
