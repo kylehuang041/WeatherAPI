@@ -110,7 +110,10 @@ function fetchAPI(city) {
         // console.log(data);
         checkWeather(data);
     })
-    .catch(error => alert("Invalid City"))
+    .catch(error => {
+        fetchAPI("Seattle");
+        console.log("Invalid City");
+    })
 }
 
 /*
