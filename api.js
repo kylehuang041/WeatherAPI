@@ -104,6 +104,7 @@ function checkWeather(data) {
  */
 function fetchAPI(city) {
     // fetch URL, then get access to API JSON object
+    if (city == null || city == undefined || city === "<empty string>") city = "Seattle";
     fetch(URL + "q=" + city)
     .then(response => response.json())
     .then(data => {
@@ -111,8 +112,8 @@ function fetchAPI(city) {
         checkWeather(data);
     })
     .catch(error => {
-        fetchAPI("Seattle");
         console.log("Invalid City");
+        alert("Invalid City");
     })
 }
 
