@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Weather API</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather API</title>
+</head>
 
-    <body>
-        <!--Box container -->
-        <div class="container">
+<body>
+    <!--Box container -->
+    <div class="container" id="container">
 
-            <!--Title-->
-            <h1>Weather API</h1>
+        <!--Title-->
+        <h1>Weather API</h1>
 
-            <!--Input Wrapper-->
-            <div class="input">
+        <!--Input Wrapper-->
+        <div class="input">
 
-                <!--Search Icon-->
-                <i class="fas fa-search" type="submit"></i>
+            <!--Search Icon-->
+            <i class="fas fa-search" type="submit"></i>
 
-                <!--Input Search-->
-                <input type="text" class="search submit" value=""
-                placeholder="Enter City Name">
+            <!--Input Search-->
+            <input type="text" class="search submit" value="" placeholder="Enter City Name">
 
-            </div>
-
-            <p id="status"></p>
-
-            <!--Weather Information-->
-            <div class="result"></div>
         </div>
 
-        <!--Search Icon script-->
-        <script src="https://kit.fontawesome.com/e3083b4528.js"
-        crossorigin="anonymous"></script>
+        <!--Error Message-->
+        <p id="status"></p>
 
-        <!--API Fetch Data for Weather Information script-->
-        <script src="api.js"></script>
-    </body>
+        <!--Weather Information-->
+        <div class="result"></div>
+
+    </div>
+
+    <!--Search Icon script-->
+    <script src="https://kit.fontawesome.com/e3083b4528.js" crossorigin="anonymous"></script>
+
+    <!--API Fetch Data for Weather Information script-->
+    <script src="api.js"></script>
+</body>
 
 </html>
