@@ -124,10 +124,6 @@ function fetchAPI(city) {
     })
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    window.location.hash = "container";
-})
-
 /*
 Website API Call Instructions: https://openweathermap.org/current
 API: https://api.openweathermap.org/data/2.5/weather?q=London&appid=cb48d909cf74b142fdd832755fa133c7
