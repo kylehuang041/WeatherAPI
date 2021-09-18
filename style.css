@@ -107,3 +107,8 @@ input[type="text"] {
     color: red;
     font-size: 1.2rem;
 }
+
+.result {
+    margin-top: 10px;
+    line-height: 3rem;
+}
