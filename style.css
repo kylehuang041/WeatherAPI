@@ -68,7 +68,7 @@ h1 {
     border: none;
     left: 0;
     margin: 0 10px 0 10px;
-    color: var(--input) !important;
+    color: var(--input);
     font-size: 1.1rem;
     align-self: center;
 }
@@ -76,7 +76,7 @@ h1 {
 /* Input Wrapper (Hover Effect) */
 .input:hover {
     border-radius: 20px;
-    background: linear-gradient(to right, rgba(138, 181, 201, 0.7), rgba(155, 170, 187, 0.7));
+    background: linear-gradient(to right, rgba(129, 199, 230, 0.7), rgba(6, 41, 56, 0.1));
 }
 
 /* Input Wrapper */
@@ -101,6 +101,7 @@ input[type="text"] {
     color: var(--input);
 }
 
+/* Error Message */
 #status {
     text-align: center;
     color: red;
