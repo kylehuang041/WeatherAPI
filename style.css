@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&family=Ubuntu&display=swap');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Color Variables */
 :root {
     --title: rgb(20, 89, 136);
@@ -11,13 +17,10 @@
 
 /* Body */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: var(--key);
     letter-spacing: 1.5px;
-    line-height: 30px;
+    line-height: 40px;
     background: #00B4DB;
     background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
     background: linear-gradient(to right, #0083B0, #00B4DB);
@@ -28,6 +31,8 @@ h1 {
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     color: var(--title);
+    padding: 20px 25px;
+    line-height: 50px;
 }
 
 /* Weather Information Container */
@@ -41,11 +46,11 @@ h1 {
     flex-direction: column;
     background: rgba(255, 255, 255, 0.35);
     width: 300px;
+    height: 100%;
     border-radius: 20px;
     padding: 20px 30px;
     color: var(--value);
 }
-/*rgba(133, 133, 133, 0.35)*/
 
 /* Weather Information: keys/variables */
 .key {
@@ -94,4 +99,10 @@ input[type="text"] {
     font-size: 1rem;
     font-size: 1.15rem;
     color: var(--input);
+}
+
+#status {
+    text-align: center;
+    color: red;
+    font-size: 1.2rem;
 }

@@ -1,4 +1,5 @@
 const key = 'cb48d909cf74b142fdd832755fa133c7'; // API Key
+const status = document.querySelector('#status');
 
 //API URL
 let URL = `https://api.openweathermap.org/data/2.5/weather?appid=${key}`
@@ -22,9 +23,14 @@ window.addEventListener('load', () => {
                 .then(response => response.json())
                 .then(data => {
                     // console.log(data);
+                    status.innerHTML = "";
+                    status.style.marginTop = 0;
                     checkWeather(data);
                 })
-                .catch(error => console.log("Getting Location Error"))
+                .catch(error =>  {
+                    status.style.marginTop = 10;
+                    status.innerHTML = "&#9888; Incorrect City Name";
+                })
         })
         nav = true;
     }
@@ -109,11 +115,12 @@ function fetchAPI(city) {
     .then(response => response.json())
     .then(data => {
         // console.log(data);
+        status.innerHTML = "";
+        status.style.marginTop = 0;
         checkWeather(data);
     })
     .catch(error => {
-        console.log("Invalid City");
-        alert("Invalid City");
+        status.innerHTML = "&#9888; Incorrect City Name";
     })
 }
 
