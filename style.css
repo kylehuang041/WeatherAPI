@@ -79,6 +79,10 @@ h1 {
     background: linear-gradient(to right, rgba(129, 199, 230, 0.7), rgba(6, 41, 56, 0.1));
 }
 
+input::placeholder {
+    color: rgb(0, 27, 61);
+}
+
 /* Input Wrapper */
 div.input {
     border: 1px solid var(--key);
