@@ -112,7 +112,8 @@ input[type="text"] {
     font-size: 1.2rem;
 }
 
+/* API Data Output Container */
 .result {
     margin-top: 10px;
-    line-height: 3rem;
+    line-height: 2.4rem;
 }
