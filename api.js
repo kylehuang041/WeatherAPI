@@ -24,11 +24,10 @@ window.addEventListener('load', () => {
                 .then(data => {
                     // console.log(data);
                     status.innerHTML = "";
-                    status.style.marginTop = 0;
                     checkWeather(data);
                 })
                 .catch(error =>  {
-                    status.style.marginTop = 10;
+                    result.style.marginTop = 0;
                     status.innerHTML = "&#9888; Incorrect City Name";
                 })
         })
@@ -116,10 +115,11 @@ function fetchAPI(city) {
     .then(data => {
         // console.log(data);
         status.innerHTML = "";
-        status.style.marginTop = 0;
         checkWeather(data);
     })
     .catch(error => {
+        const result = document.querySelector('.result');
+        result.style.marginTop = 0;
         status.innerHTML = "&#9888; Incorrect City Name";
     })
 }

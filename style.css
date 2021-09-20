@@ -105,6 +105,16 @@ input[type="text"] {
     color: var(--input);
 }
 
+/* Status Error Message Container */
+.status-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
 /* Error Message */
 #status {
     text-align: center;
