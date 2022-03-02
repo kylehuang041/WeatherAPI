@@ -80,7 +80,6 @@ function checkWeather(data) {
         <p class="city"><b class="key">Location:</b> ${data.name}, ${data.sys.country}</p>
         <p class="temp"><b class="key">Temperature:</b> ${data.main.temp}  &#176 F</p>
         <p class="desc"><b class="key">Description:</b> ${desc}</p>
-        <p class="date"><b class="key">Date:</b> ${new Date()}</p> 
     `
 
     const inputField = document.querySelector('input');
