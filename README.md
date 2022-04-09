@@ -1,4 +1,4 @@
-# Weather-API
+# Weather-App
 Link: https://kylehuang041.github.io/WeatherAPI/<br><br>
 Uses HTML/CSS and JavaScript.<br>
 Type location to get weather information.<br>
