@@ -13,7 +13,6 @@ window.addEventListener('load', () => {
 
     // If user enables location service, then
     if (navigator.geolocation) {
-        console.log("load: navigator geolocation");
         // get user's location: longitude and latitude
         navigator.geolocation.getCurrentPosition((pos) => {
             // fetch data and output the location weather information
@@ -22,7 +21,6 @@ window.addEventListener('load', () => {
             + pos.coords.longitude)
                 .then(response => response.json())
                 .then(data => {
-                    // console.log(data);
                     status.innerHTML = "";
                     checkWeather(data);
                 })
@@ -36,7 +34,6 @@ window.addEventListener('load', () => {
 
     //If local storage isn't empty, then use its data to search
     if (localStorage.getItem("cityName") !== null) {
-        console.log("load: local storage");
         let city = localStorage.getItem("cityName");
         fetchAPI(city);
     }
@@ -44,7 +41,6 @@ window.addEventListener('load', () => {
     // Otherwise, if location services are disabled, default to Seattle
     // weather information
     else if (localStorage.getItem("cityName") === null) {
-        console.log("load: Seattle");
         let city = "Seattle"; 
         fetchAPI(city);
     }
@@ -97,7 +93,6 @@ function checkWeather(data) {
     }
 
     inputField.value = ""; // clear input search text after search
-    console.log("local storage: " + localStorage.getItem("cityName"));
 }
 
 /**
@@ -112,7 +107,6 @@ function fetchAPI(city) {
     fetch(URL + "q=" + city)
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
         status.innerHTML = "";
         checkWeather(data);
     })
