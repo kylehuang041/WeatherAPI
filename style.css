@@ -1,130 +1,128 @@
+/*
+  Name: Kyle Huang
+
+	This is style.css where it contains the design and responsiveness of index.html.
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&family=Ubuntu&display=swap');
 
 /* Color Variables */
 :root {
-    --blue1: rgb(20, 89, 136);
-    --blue2: rgb(15, 80, 110);
-    --blue3: rgb(35, 121, 128);
+	--text-color: rgb(101, 165, 192);
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 /* Body */
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--blue3);
-    letter-spacing: 1.5px;
-    line-height: 40px;
-    background: #00B4DB;
-    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
-    background: linear-gradient(to right, #0083B0, #00B4DB);
-    height: 100%;
-    min-height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: 1.5px;
+	line-height: 40px;
+	background: #00B4DB;
+	background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+	background: linear-gradient(to right, #0083B0, #00B4DB);
+	height: 100%;
+	min-height: 100vh;
 }
 
 /* Title */
 h1 {
-    font-family: 'Ubuntu', sans-serif;
-    text-align: center;
-    color: var(--blue1);
-    padding: 20px 25px;
-    line-height: 50px;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+	padding: 20px 25px;
+	line-height: 50px;
+	color: var(--text-color2);
 }
 
 /* Weather Information Container */
-.container {
-    font-family: 'Slabo 27px', serif;
-    font-size: 1.4rem;
-    margin: 12.5% auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.35);
-    width: 300px;
-    height: 100%;
-    border-radius: 20px;
-    padding: 20px 30px;
-    color: var(--blue1);
+#container {
+	font-family: 'Slabo 27px', serif;
+	font-size: 1.4rem;
+	margin: 12.5% auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: linear-gradient(to right, rgb(22, 75, 112), rgb(2, 88, 114));
+	width: 300px;
+	height: 100%;
+	border-radius: 20px;
+	padding: 20px 30px;
+	color: var(--text-color);
 }
 
-/* Weather Information: keys/variables */
-.key {
-    color: var(--blue3);
+/* Search (Focus Highlight) */
+#search,
+select:focus,
+#search-container:focus,
+textarea:focus,
+button:focus {
+	border: none;
+	outline: none;
 }
 
-/* Input Search (Focus Highlight) */
-.search, select:focus, input:focus, textarea:focus, button:focus {
-    border: none;
-    outline: none;
+/* Search Container */
+#search-container {
+	border: 1px solid var(--text-color);
+	border-radius: 50px;
+	height: 30px;
+	width: 100%;
+	padding: 2px 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-/* Search Icon in Input Search */
-.fas {
-    border: none;
-    left: 0;
-    margin: 0 10px 0 10px;
-    color: var(--blue2);
-    font-size: 1.1rem;
-    align-self: center;
+/* Search Icon */
+#search-icon {
+	border: none;
+	left: 0;
+	margin: 0 10px 0 10px;
+	font-size: 1.1rem;
+	align-self: center;
 }
 
-/* Input Wrapper (Hover Effect) */
-.input:hover {
-    border-radius: 20px;
-    background: linear-gradient(to right, rgba(129, 199, 230, 0.7), rgba(6, 41, 56, 0.1));
+/* Search Input */
+#search {
+	border: none;
+	width: 75%;
+	background: none;
+	font-size: 1rem;
+	font-size: 1.15rem;
 }
 
-input::placeholder {
-    color: rgb(0, 27, 61);
+#search::placeholder {
+	color: var(--text-color);
 }
 
-/* Input Wrapper */
-div.input {
-    border: 1px solid var(--blue3);
-    border-radius: 50px;
-    height: 30px;
-    width: 100%;
-    padding: 2px 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-/* Input Search */
-input[type="text"] {
-    border: none;
-    width: 75%;
-    background: none;
-    font-size: 1rem;
-    font-size: 1.15rem;
-    color: var(--blue2);
+#search {
+	color: var(--text-color);
 }
 
 /* Status Error Message Container */
-.status-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+#status-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
 }
 
 /* Error Message */
 #status {
-    text-align: center;
-    color: red;
-    font-size: 1.2rem;
+	text-align: center;
+	color: red;
+	font-size: 1.2rem;
 }
 
 /* API Data Output Container */
-.result {
-    margin-top: 10px;
-    line-height: 2.4rem;
+#weather-info {
+	margin-top: 10px;
+	line-height: 2.4rem;
 }

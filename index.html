@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<!--
+    Name: Kyle Huang
 
+    This is index.html where it contains the structure and contents of the
+    weather website application.
+-->
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -11,31 +17,26 @@
     </head>
     <body>
         <!--Box container -->
-        <div class="container" id="container">
-
+        <main id="container">
             <!--Title-->
             <h1>Weather App</h1>
 
-            <!--Input Wrapper-->
-            <div class="input">
-
+            <!--search-container Wrapper-->
+            <div id="search-container">
                 <!--Search Icon-->
-                <i class="fas fa-search" type="submit"></i>
-
-                <!--Input Search-->
-                <input type="text" class="search submit" value="" placeholder="Enter City Name">
-
+                <i id="search-icon" class="fas fa-search" type="submit"></i>
+                <!--search-container Search-->
+                <input type="text" name="search" id="search" placeholder="Enter City Name">
             </div>
 
             <!--Error Message-->
-            <div class="status-container">
+            <div id="status-container">
                 <p id="status"></p>
             </div>
 
             <!--Weather Information-->
-            <div class="result"></div>
-
-        </div>
+            <div id="weather-info"></div>
+        </main>
 
         <!--Search Icon script-->
         <script src="https://kit.fontawesome.com/e3083b4528.js" crossorigin="anonymous"></script>
