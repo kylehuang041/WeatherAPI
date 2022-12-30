@@ -126,3 +126,7 @@ button:focus {
 	margin-top: 10px;
 	line-height: 2.4rem;
 }
+
+.hidden {
+	display: none;
+}

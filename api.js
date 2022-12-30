@@ -12,13 +12,14 @@
 	// address to give their location's weather information.
 	window.addEventListener('load', init);
 	const key = 'cb48d909cf74b142fdd832755fa133c7'; // API Key
-	const status = document.querySelector('#status');
 	let API_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=imperial&`;
 
 	// MAIN BLOCK
 	function init() {
+		let status = document.querySelector('#status');
 		let city = localStorage.getItem("cityName");
 		let searchInput = document.querySelector("#search");
+		status.classList.add("hidden");
 		searchInput.value = "";
 
 		fetchWeatherInfo(city); // get weather info from local storage		
@@ -51,8 +52,10 @@
 						processWeatherInfo(data);
 					})
 					.catch(error => {
-						result.style.marginTop = 0;
-						status.innerHTML = "&#9888; Incorrect City Name";
+						let status = document.querySelector('#status');
+						let weatherInfo = document.querySelector('#weather-info');
+						weatherInfo.classList.add("hidden");
+						status.classList.remove("hidden");
 					})
 			});
 		}
@@ -69,6 +72,7 @@
 		let weatherInfo = document.querySelector('#weather-info');
 		let desc = data.weather[0].description;
 		desc = desc.charAt(0).toUpperCase() + desc.slice(1);
+		weatherInfo.classList.remove("hidden");
 
 		// write weather info to HTML page
 		weatherInfo.innerHTML =
@@ -94,13 +98,13 @@
 		fetch(API_URL + "q=" + city)
 			.then(response => response.json())
 			.then(data => {
-				status.innerHTML = "";
 				processWeatherInfo(data);
 			})
 			.catch(error => {
-				const result = document.querySelector('#weather-info');
-				result.style.marginTop = 0;
-				status.innerHTML = "&#9888; Incorrect City Name";
+				let status = document.querySelector('#status');
+				let weatherInfo = document.querySelector('#weather-info');
+				weatherInfo.classList.add("hidden");
+				status.classList.remove("hidden");
 			});
 	}
 }());
