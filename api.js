@@ -1,3 +1,8 @@
+/*
+Website API Call Instructions: https://openweathermap.org/current
+API: https://api.openweathermap.org/data/2.5/weather?q=London&appid=cb48d909cf74b142fdd832755fa133c7
+*/
+
 const key = 'cb48d909cf74b142fdd832755fa133c7'; // API Key
 const status = document.querySelector('#status');
 
@@ -14,17 +19,17 @@ window.addEventListener('load', () => {
     // If user enables location service, then
     if (navigator.geolocation) {
         // get user's location: longitude and latitude
-        navigator.geolocation.((pos) => {
+        navigator.geolocation.getCurrentPosition(pos => {
             // fetch data and output the location weather information
             // with the use of the location
             fetch(URL + "lat=" + pos.coords.latitude + "&lon="
-            + pos.coords.longitude)
+                + pos.coords.longitude)
                 .then(response => response.json())
                 .then(data => {
                     status.innerHTML = "";
                     checkWeather(data);
                 })
-                .catch(error =>  {
+                .catch(error => {
                     result.style.marginTop = 0;
                     status.innerHTML = "&#9888; Incorrect City Name";
                 })
@@ -43,10 +48,10 @@ window.addEventListener('load', () => {
     // weather information
     else if (localStorage.getItem("cityName") === null) {
         console.log("load: Seattle");
-        let city = "Seattle"; 
+        let city = "Seattle";
         fetchAPI(city);
     }
-})
+});
 
 // Collects user input for which city to use for weather search info
 // when 'Enter' key is pressed
@@ -118,8 +123,3 @@ function fetchAPI(city) {
         status.innerHTML = "&#9888; Incorrect City Name";
     })
 }
-
-/*
-Website API Call Instructions: https://openweathermap.org/current
-API: https://api.openweathermap.org/data/2.5/weather?q=London&appid=cb48d909cf74b142fdd832755fa133c7
-*/

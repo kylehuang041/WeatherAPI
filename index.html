@@ -1,46 +1,46 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="sun.jpg">
+        <link rel="stylesheet" href="style.css">
+        <title>Weather App</title>
+    </head>
+    <body>
+        <!--Box container -->
+        <div class="container" id="container">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="sun.jpg">
-    <link rel="stylesheet" href="style.css">
-    <title>Weather App</title>
-</head>
+            <!--Title-->
+            <h1>Weather App</h1>
 
-<body>
-    <!--Box container -->
-    <div class="container" id="container">
+            <!--Input Wrapper-->
+            <div class="input">
 
-        <!--Title-->
-        <h1>Weather App</h1>
+                <!--Search Icon-->
+                <i class="fas fa-search" type="submit"></i>
 
-        <!--Input Wrapper-->
-        <div class="input">
+                <!--Input Search-->
+                <input type="text" class="search submit" value="" placeholder="Enter City Name">
 
-            <!--Search Icon-->
-            <i class="fas fa-search" type="submit"></i>
+            </div>
 
-            <!--Input Search-->
-            <input type="text" class="search submit" value="" placeholder="Enter City Name">
+            <!--Error Message-->
+            <div class="status-container">
+                <p id="status"></p>
+            </div>
+
+            <!--Weather Information-->
+            <div class="result"></div>
 
         </div>
 
-        <!--Error Message-->
-        <div class="status-container"><p id="status"></p></div>
+        <!--Search Icon script-->
+        <script src="https://kit.fontawesome.com/e3083b4528.js" crossorigin="anonymous"></script>
 
-        <!--Weather Information-->
-        <div class="result"></div>
-
-    </div>
-
-    <!--Search Icon script-->
-    <script src="https://kit.fontawesome.com/e3083b4528.js" crossorigin="anonymous"></script>
-
-    <!--API Fetch Data for Weather Information script-->
-    <script src="api.js"></script>
-</body>
-
+        <!--API Fetch Data for Weather Information script-->
+        <script src="api.js"></script>
+    </body>
 </html>

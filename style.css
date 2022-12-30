@@ -1,36 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&family=Ubuntu&display=swap');
 
+/* Color Variables */
+:root {
+    --blue1: rgb(20, 89, 136);
+    --blue2: rgb(15, 80, 110);
+    --blue3: rgb(35, 121, 128);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Color Variables */
-:root {
-    --title: rgb(20, 89, 136);
-    --input: rgb(15, 80, 110);
-    --key: rgb(35, 121, 128);
-    --value: var(--title);
-}
-
 /* Body */
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--key);
+    color: var(--blue3);
     letter-spacing: 1.5px;
     line-height: 40px;
     background: #00B4DB;
     background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
     background: linear-gradient(to right, #0083B0, #00B4DB);
+    height: 100%;
+    min-height: 100vh;
 }
 
 /* Title */
 h1 {
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
-    color: var(--title);
+    color: var(--blue1);
     padding: 20px 25px;
     line-height: 50px;
 }
@@ -49,12 +50,12 @@ h1 {
     height: 100%;
     border-radius: 20px;
     padding: 20px 30px;
-    color: var(--value);
+    color: var(--blue1);
 }
 
 /* Weather Information: keys/variables */
 .key {
-    color: var(--key);
+    color: var(--blue3);
 }
 
 /* Input Search (Focus Highlight) */
@@ -68,7 +69,7 @@ h1 {
     border: none;
     left: 0;
     margin: 0 10px 0 10px;
-    color: var(--input);
+    color: var(--blue2);
     font-size: 1.1rem;
     align-self: center;
 }
@@ -85,7 +86,7 @@ input::placeholder {
 
 /* Input Wrapper */
 div.input {
-    border: 1px solid var(--key);
+    border: 1px solid var(--blue3);
     border-radius: 50px;
     height: 30px;
     width: 100%;
@@ -102,7 +103,7 @@ input[type="text"] {
     background: none;
     font-size: 1rem;
     font-size: 1.15rem;
-    color: var(--input);
+    color: var(--blue2);
 }
 
 /* Status Error Message Container */
