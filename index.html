@@ -16,26 +16,29 @@
         <title>Weather App</title>
     </head>
     <body>
-        <!--Box container -->
-        <main id="container">
-            <!--Title-->
-            <h1>Weather App</h1>
+        <main>
+            <!--Box container -->
+            <div id="container">
 
-            <!--search-container Wrapper-->
-            <div id="search-container">
-                <!--Search Icon-->
-                <i id="search-icon" class="fas fa-search" type="submit"></i>
-                <!--search-container Search-->
-                <input type="text" name="search" id="search" placeholder="Enter City Name">
+                <!--Title-->
+                <h1>Weather App</h1>
+
+                <!--search-container Wrapper-->
+                <div id="search-container">
+                    <!--Search Icon-->
+                    <i id="search-icon" class="fas fa-search" type="submit"></i>
+                    <!--search-container Search-->
+                    <input type="text" name="search" id="search" placeholder="Enter City Name">
+                </div>
+
+                <!--Error Message-->
+                <div id="status-container">
+                    <p id="status" hidden>&#9888; Incorrect City Name</p>
+                </div>
+
+                <!--Weather Information-->
+                <div id="weather-info"></div>
             </div>
-
-            <!--Error Message-->
-            <div id="status-container">
-                <p id="status" hidden>&#9888; Incorrect City Name</p>
-            </div>
-
-            <!--Weather Information-->
-            <div id="weather-info"></div>
         </main>
 
         <!--Search Icon script-->

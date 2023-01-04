@@ -33,7 +33,7 @@
 	}
 
 	/**
-	 * Get user's location te fetch weather information
+	 * Get user's location to fetch weather information
 	 */
 	function useNavigation() {
 		// If user enables location service, then
@@ -45,10 +45,7 @@
 				fetch(API_URL + "lat=" + pos.coords.latitude + "&lon="
 					+ pos.coords.longitude)
 					.then(response => response.json())
-					.then(data => {
-						status.innerHTML = "";
-						processWeatherInfo(data);
-					})
+					.then(data => processWeatherInfo(data))
 					.catch(error => {
 						let status = document.querySelector('#status');
 						let weatherInfo = document.querySelector('#weather-info');
