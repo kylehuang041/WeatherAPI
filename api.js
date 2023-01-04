@@ -20,7 +20,7 @@
 		let searchInput = document.querySelector("#search");
 		searchInput.value = "";
 
-		fetchWeatherInfo(city); // get weather info from local storage		
+		if (city) fetchWeatherInfo(city); // get weather info from local storage		
 		useNavigation();// Ask user for location to get weather info
 
 		// Get city name from search input to get weather info
