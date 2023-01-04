@@ -16,10 +16,8 @@
 
 	// MAIN BLOCK
 	function init() {
-		let status = document.querySelector('#status');
 		let city = localStorage.getItem("cityName");
 		let searchInput = document.querySelector("#search");
-		status.classList.add("hidden");
 		searchInput.value = "";
 
 		fetchWeatherInfo(city); // get weather info from local storage		
