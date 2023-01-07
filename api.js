@@ -102,4 +102,4 @@
 				status.classList.remove("hidden");
 			});
 	}
-}());
+})();
